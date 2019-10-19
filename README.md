@@ -38,3 +38,21 @@ docker tag [your]:[tag] [username]/[repo]:[tag]
 docker push username/[your]:[tag]
 ```
 
+## Local Docker installation not working?
+Problem yes, but no problem! With your google cloud account, you have access to the *cloudshell* which has everything you need.
+And the best part? Blazing fast internet!
+
+I'll assume you already know how to get to your cloudshell terminal.
+```
+git clone https://github.com/NgariNdungu/alc4-cloud-challenge.git app
+cd app/
+docker-compose run app yarn install
+docker-compose up
+```
+Then on the cloudshell nav bar, click on the `Web Preview` button -> `Change port`; type 3030 for the port number then click on `Change and Preview`.
+And be amazed... or not.
+
+Launch the `Code Editor` and create away.
+Like on local, the page will be reloaded when you save your code.
+Don't be put down by having to edit code on the cloud. The editor is quite good.
+You get out of the box code suggestion and completion, plus auto-save if you swing that way!
