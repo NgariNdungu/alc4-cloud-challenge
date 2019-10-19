@@ -4,7 +4,11 @@
 ## The set-up
 ### Development
 This project is set up for development with docker.
-To run the local development server(yarn):
+Unless you're copying over a pre-existing app(with node_modules) you'll need to first install dependencies:
+```
+docker-compose run app yarn install
+```
+Then run the local development server:
 ```
 docker-compose up
 ```
