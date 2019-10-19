@@ -3,9 +3,9 @@ services:
   app:
     image: node:lts-stretch
     volumes:
-      - ./cloud-challenge:/app
+      - ./app:/app
     ports:
       - 3030:3000
-    working_dir: /app/cloud-challenge
+    working_dir: /app
     user: 1000:1000
     command: "yarn start"
