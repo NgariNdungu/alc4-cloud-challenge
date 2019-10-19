@@ -24,8 +24,13 @@ Test that the image was built properly with:
 ```
 docker run -it --rm -p 8080:80 [your]:[tag]
 ```
-Then check that your app runs properly by visiting http:localhost:8080
+Then check that your app runs properly by visiting http://localhost:8080
 
-### Deployment
-WIP...
+### Deployment [WIP]
+Push the built image to a registry(dockerhub):
+``` bash
+docker login
+docker tag [your]:[tag] [username]/[repo]:[tag]
+docker push username/[your]:[tag]
+```
 
