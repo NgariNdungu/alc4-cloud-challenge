@@ -37,6 +37,24 @@ docker login
 docker tag [your]:[tag] [username]/[repo]:[tag]
 docker push username/[your]:[tag]
 ```
+Create the [deployment](deploy/alc4_deployment.yaml) and [service](deploy/alc4_lb.yaml) configs.
+Then do stuff:
+```
+gcloud projects list
+gcloud config set project [project_name]
+gcloud clusters list
+gcloud container clusters create alc4 --zone=us-central1-a \
+  --machine-type=g1-small \
+  --enable-autoscaling --min-nodes=1 --max-nodes=6 \
+  --cluster-version=1.14.6-gke.13
+kubectl diff -f deploy.yaml
+kubectl apply -f deploy.yaml
+kubectl get pods -owide
+kubectl diff -f lb.yaml
+kubectl apply -f lb.yaml
+kubectl get svc -owide
+```
+http://35.188.176.49/
 
 ## Local Docker installation not working?
 Problem yes, but no problem! With your google cloud account, you have access to the *cloudshell* which has everything you need.
