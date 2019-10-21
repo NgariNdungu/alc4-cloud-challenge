@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alc4
+  labels:
+    app: alc4
+spec:
+  selector:
+    matchLabels:
+      app: alc4
+  replicas: 3
+  template:
+    metadata:
+      name: nginx-react
+      labels:
+        app: alc4
+    spec:
+      containers:
+        - name: web
+          image: ngarindungu/alc4:deploy
+      # restartPolicy: OnFailure
