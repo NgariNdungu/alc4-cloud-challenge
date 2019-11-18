@@ -54,15 +54,22 @@ kubectl diff -f lb.yaml
 kubectl apply -f lb.yaml
 kubectl get svc -owide
 ```
-http://35.188.176.49/
+### Teardown
+As all good things must end(right?), when it's time to retire the project, the definitions come in handy:
+```bash
+kubectl delete -f lb.yaml
+kubectl delete -f deploy.yaml
+# cluster
+gcloud container clusters delete alc4 --zone=us-central1-a
+```
 
 ## Local Docker installation not working?
 Problem yes, but no problem! With your google cloud account, you have access to the *cloudshell* which has everything you need.
 And the best part? Blazing fast internet!
 
 I'll assume you already know how to get to your cloudshell terminal.
-```
-git clone https://github.com/NgariNdungu/alc4-cloud-challenge.git app
+```bash
+git clone https://github.com/NgariNdungu/alc4-cloud-challenge.git app # your repo here
 cd app/
 docker-compose run app yarn install
 docker-compose up
